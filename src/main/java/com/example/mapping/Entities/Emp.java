@@ -2,8 +2,6 @@ package com.example.mapping.Entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
 @Entity
@@ -16,8 +14,8 @@ public class Emp {
 
     private String empDob;
 
-    @OneToOne(cascade = CascadeType.ALL) // Cascade will persist the Address along with Emp
-    @JoinColumn(name = "address_id") // Foreign key column for the Address in Emp
+    // Many employees can share the same address, so we use @ManyToOne
+    @ManyToOne
     private Address address;
 
     public Long getEmpId() {
@@ -51,5 +49,7 @@ public class Emp {
     public void setAddress(Address address) {
         this.address = address;
     }
+
+
 }
 

@@ -3,10 +3,9 @@ package com.example.mapping.Controller;
 import com.example.mapping.Entities.Address;
 import com.example.mapping.Services.AddServ;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -17,8 +16,12 @@ public class AddController {
     @PostMapping("saveAddress")
     public String save(@RequestBody Address address) {
         addServ.save(address);
-        //bhjkbkj
         return "Address saved successfully";
+    }
+
+    @GetMapping("find/{id}")
+    public Optional<Address> findById(@PathVariable Long id) {
+        return addServ.findById(id);
     }
 }
 

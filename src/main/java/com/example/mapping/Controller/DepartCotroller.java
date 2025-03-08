@@ -17,7 +17,7 @@ public class DepartCotroller {
 
     @PostMapping("/addDept")
     public Department addDept(@RequestBody Department department) {
-        return departmentService.save(department);
+        return departmentService.saveDepartment(department);
     }
 
     @GetMapping("findById/{id}")

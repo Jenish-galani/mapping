@@ -1,8 +1,11 @@
 package com.example.mapping.Services;
 
 import com.example.mapping.Dto.DepartmentDTO;
+import com.example.mapping.Entities.Address;
 import com.example.mapping.Entities.Department;
+import com.example.mapping.Entities.Emp;
 import com.example.mapping.Repositories.DeptRepo;
+import com.example.mapping.Repositories.EmpRepo;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +18,22 @@ public class DepartmentService {
     @Autowired
     private DeptRepo departmentRepository;
 
-    public Department save(Department department) {
+    @Autowired
+    private EmpRepo empRepo;
+
+    public Department saveDepartment(Department department) {
+        // Check if the employee exists
+        Emp emp = empRepo.findById(department.getEmployee().getEmpId()).orElse(null);
+
+        if (emp != null) {
+            // If the employee exists, associate it with the department
+            department.setEmployee(emp);
+        } else {
+            // Handle the case where the employee doesn't exist
+            throw new RuntimeException("Employee not found for ID: " + department.getEmployee().getEmpId());
+        }
+
+        // Save the department to the database
         return departmentRepository.save(department);
     }
 
