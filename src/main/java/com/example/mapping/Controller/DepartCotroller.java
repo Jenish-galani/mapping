@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping("api")
 public class DepartCotroller {
     @Autowired
-    private DepartmentService departmentService;
+    private DepartmentService departmentService; //jenish
 
     @PostMapping("/addDept")
     public Department addDept(@RequestBody Department department) {
