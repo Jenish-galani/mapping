@@ -1,25 +1,25 @@
 package com.example.mapping.services;
 
 import com.example.mapping.entities.Address;
-import com.example.mapping.entities.Emp;
-import com.example.mapping.repositories.AddRepo;
-import com.example.mapping.repositories.EmpRepo;
+import com.example.mapping.entities.Employee;
+import com.example.mapping.repositories.AddressRepository;
+import com.example.mapping.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class EmpServiceImpl implements EmpService{
+public class EmployeeServiceImpl implements EmployeeService{
     @Autowired
-    private EmpRepo empRepository;
+    private EmployeeRepository empRepository;
 
     @Autowired
-    private AddRepo addRepo;
+    private AddressRepository addRepo;
 
 
     @Override
-    public Emp saveEmployee(Emp employee) {
+    public Employee saveEmployee(Employee employee) {
         // Check if address exists and assign it to the employee
         Address address = addRepo.findById(employee.getAddress().getAddressId()).orElse(null);
 
@@ -34,8 +34,14 @@ public class EmpServiceImpl implements EmpService{
     }
 
     @Override
-    public Optional<Emp> show(Long id) {
+    public Optional<Employee> show(Long id) {
         return empRepository.findById(id);
     }
+
+    @Override
+    public Employee findByEmpName(String empName) {
+        return empRepository.findByEmpName(empName);
+    }
+
 }
 

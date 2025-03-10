@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api")
-public class DepartCotroller {
+public class DepartmentCotroller {
     @Autowired
     private DepartmentService departmentService; //jenish
 

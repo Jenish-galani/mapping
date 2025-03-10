@@ -19,37 +19,37 @@ public class Department {
     // Foreign key to Emp
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "emp_id")
-    private Emp employee; // This will reference Emp entity
+    private Employee employee; // This will reference Emp entity
 
     public Long getDeptId() {
         return deptId;
-    }
-
-    public String getDeptName() {
-        return deptName;
-    }
-
-    public LocalDate getDeptStartDate() {
-        return deptStartDate;
-    }
-
-    public Emp getEmployee() {
-        return employee;
     }
 
     public void setDeptId(Long deptId) {
         this.deptId = deptId;
     }
 
+    public String getDeptName() {
+        return deptName;
+    }
+
     public void setDeptName(String deptName) {
         this.deptName = deptName;
+    }
+
+    public LocalDate getDeptStartDate() {
+        return deptStartDate;
     }
 
     public void setDeptStartDate(LocalDate deptStartDate) {
         this.deptStartDate = deptStartDate;
     }
 
-    public void setEmployee(Emp employee) {
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
         this.employee = employee;
     }
 }

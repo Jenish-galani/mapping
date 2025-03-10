@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Emp {
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long empId;
@@ -49,7 +49,5 @@ public class Emp {
     public void setAddress(Address address) {
         this.address = address;
     }
-
-
 }
 

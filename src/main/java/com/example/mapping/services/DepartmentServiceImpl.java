@@ -2,10 +2,9 @@ package com.example.mapping.services;
 
 import com.example.mapping.dto.DepartmentDTO;
 import com.example.mapping.entities.Department;
-import com.example.mapping.entities.Emp;
-import com.example.mapping.repositories.DeptRepo;
-import com.example.mapping.repositories.EmpRepo;
-import jakarta.transaction.Transactional;
+import com.example.mapping.entities.Employee;
+import com.example.mapping.repositories.DepartmentRepository;
+import com.example.mapping.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +14,15 @@ import java.util.Optional;
 public class DepartmentServiceImpl implements DepartmentService{
 
     @Autowired
-    private DeptRepo departmentRepository;
+    private DepartmentRepository departmentRepository;
 
     @Autowired
-    private EmpRepo empRepo;
+    private EmployeeRepository empRepo;
 
     @Override
     public Department saveDepartment(Department department) {
         // Check if the employee exists
-        Emp emp = empRepo.findById(department.getEmployee().getEmpId()).orElse(null);
+        Employee emp = empRepo.findById(department.getEmployee().getEmpId()).orElse(null);
 
         if (emp != null) {
             // If the employee exists, associate it with the department

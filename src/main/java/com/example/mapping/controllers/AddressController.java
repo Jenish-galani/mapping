@@ -1,7 +1,7 @@
 package com.example.mapping.controllers;
 
 import com.example.mapping.entities.Address;
-import com.example.mapping.services.AddServ;
+import com.example.mapping.services.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,9 +9,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-public class AddController {
+public class AddressController {
     @Autowired
-    private AddServ addServ;
+    private AddressService addServ;
 
     @PostMapping("saveAddress")
     public String save(@RequestBody Address address) {
