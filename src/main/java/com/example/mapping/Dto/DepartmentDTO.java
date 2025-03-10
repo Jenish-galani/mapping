@@ -1,4 +1,4 @@
-package com.example.mapping.Dto;
+package com.example.mapping.dto;
 
 
 import lombok.Data;

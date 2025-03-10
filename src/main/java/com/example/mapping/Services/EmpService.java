@@ -1,7 +1,7 @@
-package com.example.mapping.Services;
+package com.example.mapping.services;
 
-import com.example.mapping.Entities.Emp;
-import com.example.mapping.Repositories.EmpRepo;
+import com.example.mapping.entities.Emp;
+import com.example.mapping.repositories.EmpRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

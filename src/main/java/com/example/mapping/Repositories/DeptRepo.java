@@ -1,6 +1,6 @@
-package com.example.mapping.Repositories;
+package com.example.mapping.repositories;
 
-import com.example.mapping.Entities.Department;
+import com.example.mapping.entities.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

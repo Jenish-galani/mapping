@@ -1,8 +1,8 @@
-package com.example.mapping.Services;
+package com.example.mapping.services;
 
-import com.example.mapping.Dto.DepartmentDTO;
-import com.example.mapping.Entities.Department;
-import com.example.mapping.Repositories.DeptRepo;
+import com.example.mapping.dto.DepartmentDTO;
+import com.example.mapping.entities.Department;
+import com.example.mapping.repositories.DeptRepo;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
