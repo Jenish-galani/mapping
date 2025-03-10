@@ -1,6 +1,6 @@
-package com.example.mapping.Repositories;
+package com.example.mapping.repositories;
 
-import com.example.mapping.Entities.Address;
+import com.example.mapping.entities.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

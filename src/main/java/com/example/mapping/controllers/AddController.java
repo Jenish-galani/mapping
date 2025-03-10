@@ -1,7 +1,7 @@
-package com.example.mapping.Controller;
+package com.example.mapping.controllers;
 
-import com.example.mapping.Entities.Address;
-import com.example.mapping.Services.AddServ;
+import com.example.mapping.entities.Address;
+import com.example.mapping.services.AddServ;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

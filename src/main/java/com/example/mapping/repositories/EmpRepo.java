@@ -1,7 +1,6 @@
-package com.example.mapping.Repositories;
+package com.example.mapping.repositories;
 
-import com.example.mapping.Entities.Emp;
-import jakarta.persistence.criteria.CriteriaBuilder;
+import com.example.mapping.entities.Emp;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

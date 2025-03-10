@@ -1,9 +1,8 @@
-package com.example.mapping.Services;
+package com.example.mapping.services;
 
-import com.example.mapping.Entities.Address;
-import com.example.mapping.Repositories.AddRepo;
+import com.example.mapping.entities.Address;
+import com.example.mapping.repositories.AddRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
