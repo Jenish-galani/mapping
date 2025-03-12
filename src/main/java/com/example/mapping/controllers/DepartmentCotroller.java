@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping("api")
 public class DepartmentCotroller {
     @Autowired
-    private DepartmentService departmentService; //jenish
+    private DepartmentService departmentService;
 
     @PostMapping("/addDept")
     public Department addDept(@RequestBody Department department) {
@@ -33,5 +33,7 @@ public class DepartmentCotroller {
         }
         return ResponseEntity.ok(departmentDTO);
     }
+
+
 }
 

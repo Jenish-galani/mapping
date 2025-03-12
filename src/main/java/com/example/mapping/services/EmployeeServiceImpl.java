@@ -26,6 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         if (address != null) {
             employee.setAddress(address); // Set the found address to the employee
         } else {
+            System.out.println("Address not found for ID: " + employee.getAddress().getAddressId());
             // Handle address not found case if necessary, maybe throw an exception
             throw new RuntimeException("Address not found for ID: " + employee.getAddress().getAddressId());
         }

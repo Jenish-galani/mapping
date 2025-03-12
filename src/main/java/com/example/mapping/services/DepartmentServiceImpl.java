@@ -21,7 +21,7 @@ public class DepartmentServiceImpl implements DepartmentService{
 
     @Override
     public Department saveDepartment(Department department) {
-        // Check if the employee exists
+//         Check if the employee exists
         Employee emp = empRepo.findById(department.getEmployee().getEmpId()).orElse(null);
 
         if (emp != null) {
