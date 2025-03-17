@@ -14,9 +14,8 @@ public class AddressController {
     private AddressService addServ;
 
     @PostMapping("saveAddress")
-    public String save(@RequestBody Address address) {
-        addServ.save(address);
-        return "Address saved successfully";
+    public Address save(@RequestBody Address address) {
+        return addServ.save(address);
     }
 
     @GetMapping("find/{id}")
