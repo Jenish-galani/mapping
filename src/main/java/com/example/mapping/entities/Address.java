@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Address {
+public class Address {  // address
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long addressId;
