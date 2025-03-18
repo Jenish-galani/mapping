@@ -19,7 +19,7 @@ public class EmployeeController {
         return empService.saveEmployee(employee);
     }
 
-    @GetMapping("findByID/{id}")
+    @GetMapping("findByIDe/{id}")
     public Optional<Employee> findById(@PathVariable Long id) {
         return empService.show(id);
     }
