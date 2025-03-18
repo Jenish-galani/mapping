@@ -18,7 +18,7 @@ public class AddressController {
         return addServ.save(address);
     }
 
-    @GetMapping("find/{id}")
+    @GetMapping("findAddressById/{id}")
     public Optional<Address> findById(@PathVariable Long id) {
         return addServ.findById(id);
     }

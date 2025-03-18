@@ -14,17 +14,17 @@ public class EmployeeController {
     private EmployeeService empService;
 
 
-    @PostMapping("/employee")
+    @PostMapping("/saveEmployee")
     public Employee createEmployee(@RequestBody Employee employee) {
         return empService.saveEmployee(employee);
     }
 
-    @GetMapping("findByIDe/{id}")
+    @GetMapping("findEmployeeByID/{id}")
     public Optional<Employee> findById(@PathVariable Long id) {
         return empService.show(id);
     }
 
-    @GetMapping("/findByName/{empName}")
+    @GetMapping("/findEmployeeByName/{empName}")
     public Employee findByName(@PathVariable String empName) {
         return empService.findByEmpName(empName);
     }

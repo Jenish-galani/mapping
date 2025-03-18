@@ -15,12 +15,12 @@ public class DepartmentCotroller {
     @Autowired
     private DepartmentService departmentService; //jenish
 
-    @PostMapping("/addDept")
+    @PostMapping("/saveDepartment")
     public Department addDept(@RequestBody Department department) {
         return departmentService.saveDepartment(department);
     }
 
-    @GetMapping("findById/{id}")
+    @GetMapping("findDepartmentById/{id}")
     public Optional<Department> findById(@PathVariable Long id) {
         return departmentService.findById(id);
     }
